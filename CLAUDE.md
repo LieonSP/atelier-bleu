@@ -4,30 +4,29 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Static landing page for [atelier-bleu.com](https://atelier-bleu.com) — a personal portfolio showcasing creative projects. No build step, no framework, no dependencies. Deployable as-is to OVH web hosting or any static host.
+Static homepage for [atelier-bleu.com](https://atelier-bleu.com) — presents Philippe's AI training ("Formation") and AI consulting ("Conseil") services, bilingual FR/EN. No build step, no framework, no dependencies. Deployable as-is to OVH web hosting or any static host.
+
+The site previously showcased creative side-projects (a "Manu" beatmaker/portfolio card). That version is archived — see `archive/` — and no longer linked from the live homepage.
 
 ## Structure
 
-- `index.html` — single-page layout: SVG atelier background, project cards
+- `index.html` — single-page layout: sticky contact/lang bar, hero, two offer cards (Formation / Conseil), about, footer
 - `style.css` — all styles; uses CSS custom properties defined in `:root`
+- `script.js` — FR/EN language toggle (swaps `data-fr` / `data-en` text on elements, persists choice in `localStorage`)
+- `archive/` — previous portfolio version of the site (`index.html` + `style.css`), kept for reference/restore, not deployed/linked
 
 ## Design system
 
 Colors are defined as CSS variables in `:root`:
-- `--blue-deep / --blue-mid / --blue-light / --blue-glow` — Parisian night-sky palette
-- `--warm-dark / --warm-wood` — interior atelier tones
-- `--text-primary / --text-muted` — typography
-- `--gold` — accent (reserved)
+- `--blue-deep / --blue-mid / --blue-light / --blue-glow` — Parisian night-sky palette (page background)
+- `--text-primary / --text-muted` — typography (white on blue)
+- `--gold` — accent, used for the eyebrow labels and offer credentials
 
-Fonts loaded from Google Fonts: **Playfair Display** (headings, italic tagline) + **Inter** (body, labels).
+Fonts loaded from Google Fonts: **Inter** (body, UI, headings) + **Playfair Display italic** (eyebrow labels only).
 
-## Adding a project
+## Editing bilingual content
 
-Copy the commented-out placeholder card in `index.html` and fill in:
-- `href` — project URL
-- `card-icon` — a single Unicode character or emoji
-- `card-title` — project name
-- `card-desc` — one-line description
+Any element that should switch between French and English carries both `data-fr="…"` and `data-en="…"` attributes; `script.js` writes the active language into `textContent` on load and on toggle click. To edit copy, update both attributes on the element (not the tag's inner text, which is only the FR fallback shown before JS runs).
 
 ## Deployment
 

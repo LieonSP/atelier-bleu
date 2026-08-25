@@ -1,0 +1,210 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --accent: #1a1a2e;
+  --text: #111;
+  --text-muted: #888;
+  --border: #e5e5e5;
+  --bg: #ffffff;
+}
+
+html, body {
+  min-height: 100%;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ─── Header ─────────────────────────────────────────── */
+
+.site-header {
+  text-align: center;
+  padding: 4rem 2rem 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  margin-bottom: 1.5rem;
+}
+
+.site-title {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: var(--text);
+}
+
+.site-tagline {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  max-width: 480px;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+/* ─── Content ─────────────────────────────────────────── */
+
+.content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* ─── Projects grid ─────────────────────────────────── */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem 4rem;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.project-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  border: 1px solid var(--border);
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: 2px;
+  align-self: flex-start;
+}
+
+/* ─── Project card ─────────────────────────────────── */
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-preview {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover .card-preview {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+}
+
+/* Manu preview */
+.manu-preview {
+  background: linear-gradient(135deg, #0d0d1a 0%, #1a1a3e 60%, #0d1a2e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.manu-keys {
+  display: flex;
+  align-items: flex-start;
+  gap: 3px;
+}
+
+.key {
+  border-radius: 0 0 3px 3px;
+}
+
+.key.white-key {
+  width: 22px;
+  height: 70px;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.key.black-key {
+  width: 14px;
+  height: 44px;
+  background: #111;
+  margin: 0 -5px;
+  z-index: 1;
+  position: relative;
+}
+
+.preview-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: rgba(255,255,255,0.5);
+}
+
+/* ─── Card meta ─────────────────────────────────────── */
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.card-arrow {
+  font-size: 1rem;
+  color: var(--text-muted);
+  transition: transform 0.2s, color 0.2s;
+}
+
+.project-card:hover .card-arrow {
+  color: var(--text);
+  transform: translate(2px, -2px);
+}
+
+.card-desc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ─── Footer ─────────────────────────────────────────── */
+
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ─── Responsive ───────────────────────────────────── */
+
+@media (max-width: 700px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .content {
+    padding: 2.5rem 1.25rem;
+  }
+}
