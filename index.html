@@ -3,79 +3,135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Atelier Bleu</title>
+  <title data-fr="Atelier Bleu — Formation &amp; conseil en IA" data-en="Atelier Bleu — AI training &amp; consulting">Atelier Bleu — Formation &amp; conseil en IA</title>
+  <meta name="description" content="Formation et conseil en IA appliquée au produit : ateliers pratiques pour équipes produit et missions de conseil pour PME." />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="logo">
-      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="48" height="48" rx="4" fill="#1a1a2e"/>
-        <rect x="8" y="8" width="14" height="14" rx="1" fill="white" opacity="0.9"/>
-        <rect x="26" y="8" width="14" height="14" rx="1" fill="white" opacity="0.6"/>
-        <rect x="8" y="26" width="14" height="14" rx="1" fill="white" opacity="0.6"/>
-        <rect x="26" y="26" width="14" height="14" rx="1" fill="white" opacity="0.9"/>
-      </svg>
+  <!-- ─── Sticky top bar ─────────────────────────────────────── -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="#top" class="brand">ATELIER BLEU</a>
+
+      <nav class="contact-links" aria-label="Contact">
+        <a href="mailto:pchamber@gmail.com" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5v-11Z"/><path d="m4 7 8 6 8-6"/></svg>
+          <span>pchamber@gmail.com</span>
+        </a>
+        <a href="tel:+33782924724" class="contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3.5c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.2 1L6.6 10.8Z"/></svg>
+          <span>+33 7 82 92 47 24</span>
+        </a>
+        <a href="https://www.linkedin.com/in/philippe-cl/" class="contact-link" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 5a1.94 1.94 0 1 1-3.88 0 1.94 1.94 0 0 1 3.88 0ZM3.4 8.75h3.48V21H3.4V8.75Zm6.02 0h3.34v1.68h.05c.47-.87 1.6-1.79 3.3-1.79 3.53 0 4.18 2.32 4.18 5.34V21h-3.48v-5.4c0-1.29-.02-2.94-1.79-2.94-1.8 0-2.08 1.4-2.08 2.85V21H9.42V8.75Z"/></svg>
+          <span class="linkedin-label">linkedin.com/in/philippe-cl</span>
+        </a>
+      </nav>
+
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" class="lang-btn" data-set-lang="fr">FR</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" class="lang-btn" data-set-lang="en">EN</button>
+      </div>
     </div>
-    <h1 class="site-title">ATELIER BLEU</h1>
-    <p class="site-tagline">Un espace de création &amp; d'expérimentation.</p>
   </header>
 
-  <main class="content">
-    <div class="projects-grid">
+  <main id="top">
 
-      <div class="project-item">
-        <span class="project-label">Projet 01</span>
-        <a class="project-card" href="https://manu.atelier-bleu.com/">
-          <div class="card-preview manu-preview">
-            <div class="preview-inner">
-              <div class="manu-keys">
-                <div class="key white-key"></div>
-                <div class="key black-key"></div>
-                <div class="key white-key"></div>
-                <div class="key white-key"></div>
-                <div class="key black-key"></div>
-                <div class="key white-key"></div>
-                <div class="key black-key"></div>
-                <div class="key white-key"></div>
-              </div>
-              <p class="preview-label">MANU</p>
-            </div>
-          </div>
-          <div class="card-meta">
-            <span class="card-title">Manu</span>
-            <span class="card-arrow">↗</span>
-          </div>
-          <p class="card-desc">Beatmaker interactif — kick, hi-hat, synth &amp; layers gospel. 126 BPM.</p>
-        </a>
+    <!-- ─── Hero ───────────────────────────────────────────── -->
+    <section class="hero">
+      <p class="eyebrow" data-fr="Formation &amp; conseil en IA" data-en="AI training &amp; consulting">Formation &amp; conseil en IA</p>
+      <h1 data-fr="Transformer l'IA en outils produit concrets" data-en="Turning AI into concrete product tools">Transformer l'IA en outils produit concrets</h1>
+      <p class="hero-sub" data-fr="J'aide les équipes produit et les PME à passer de l'idée au produit fonctionnel — ateliers pratiques et missions de conseil, du prototypage au déploiement." data-en="I help product teams and SMBs go from idea to working product — hands-on workshops and consulting missions, from prototype to deployment.">J'aide les équipes produit et les PME à passer de l'idée au produit fonctionnel — ateliers pratiques et missions de conseil, du prototypage au déploiement.</p>
+      <div class="hero-cta">
+        <a href="#offres" class="btn btn-primary" data-fr="Voir les offres" data-en="See the offers">Voir les offres</a>
+        <a href="mailto:pchamber@gmail.com" class="btn btn-ghost" data-fr="Me contacter" data-en="Get in touch">Me contacter</a>
       </div>
+    </section>
 
-      <!-- Placeholder — duplicate pour ajouter un projet -->
-      <!--
-      <div class="project-item">
-        <span class="project-label">Projet 02</span>
-        <a class="project-card" href="#" target="_blank" rel="noopener noreferrer">
-          <div class="card-preview">
+    <!-- ─── Trust strip ────────────────────────────────────── -->
+    <section class="trust">
+      <p class="trust-label" data-fr="15 ans d'expérience produit — Amazon, JUST, Leroy Merlin, Accenture, MBA INSEAD" data-en="15 years of product experience — Amazon, JUST, Leroy Merlin, Accenture, INSEAD MBA">15 ans d'expérience produit — Amazon, JUST, Leroy Merlin, Accenture, MBA INSEAD</p>
+    </section>
+
+    <!-- ─── Offers ─────────────────────────────────────────── -->
+    <section class="offers" id="offres">
+      <p class="eyebrow center" data-fr="Mes offres" data-en="What I offer">Mes offres</p>
+      <h2 class="section-title" data-fr="Deux façons de travailler ensemble" data-en="Two ways to work together">Deux façons de travailler ensemble</h2>
+
+      <div class="offers-grid">
+
+        <!-- Formation -->
+        <article class="offer-card">
+          <div class="offer-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 8.5 12 4l10 4.5-10 4.5-10-4.5Z"/><path d="M6 10.7V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.3"/><path d="M21 8.5V15"/></svg>
           </div>
-          <div class="card-meta">
-            <span class="card-title">Nom du projet</span>
-            <span class="card-arrow">↗</span>
+          <span class="offer-badge" data-fr="Formation" data-en="Training">Formation</span>
+          <h3 data-fr="Faire monter votre équipe en compétence IA" data-en="Upskill your team on AI">Faire monter votre équipe en compétence IA</h3>
+          <p class="offer-desc" data-fr="Des ateliers concrets pour donner à vos équipes (PM, designers, builders) les moyens de prototyper et construire avec l'IA — de l'idée au produit fonctionnel, sans dépendre d'une équipe tech dédiée." data-en="Hands-on workshops giving your teams (PMs, designers, builders) the skills to prototype and build with AI — from idea to working product, without depending on a dedicated tech team.">Des ateliers concrets pour donner à vos équipes (PM, designers, builders) les moyens de prototyper et construire avec l'IA — de l'idée au produit fonctionnel, sans dépendre d'une équipe tech dédiée.</p>
+
+          <ul class="offer-list">
+            <li data-fr="Prototypage produit avec l'IA (Claude Code, Lovable, v0…)" data-en="Product prototyping with AI (Claude Code, Lovable, v0…)">Prototypage produit avec l'IA (Claude Code, Lovable, v0…)</li>
+            <li data-fr="Du parcours utilisateur au prompt : la méthode UX appliquée au vibe coding" data-en="From user journey to prompt: UX method applied to vibe coding">Du parcours utilisateur au prompt : la méthode UX appliquée au vibe coding</li>
+            <li data-fr="Ateliers en groupe, cas pratiques, itération en direct" data-en="Group workshops, real cases, live iteration">Ateliers en groupe, cas pratiques, itération en direct</li>
+            <li data-fr="Formats sur-mesure : demi-journée découverte ou parcours complet" data-en="Tailored formats: half-day intro or full multi-session program">Formats sur-mesure : demi-journée découverte ou parcours complet</li>
+          </ul>
+
+          <p class="offer-meta" data-fr="Pour qui : équipes produit, écoles &amp; organismes de formation, PME en montée en compétence IA" data-en="For: product teams, schools &amp; training organizations, SMBs upskilling on AI">Pour qui : équipes produit, écoles &amp; organismes de formation, PME en montée en compétence IA</p>
+          <p class="offer-credential" data-fr="Formé à la pédagogie produit par Noé (noe.pm) · certifié PSPO I (Scrum.org)" data-en="Trained in product pedagogy by Noé (noe.pm) · certified PSPO I (Scrum.org)">Formé à la pédagogie produit par Noé (noe.pm) · certifié PSPO I (Scrum.org)</p>
+
+          <a href="mailto:pchamber@gmail.com?subject=Formation%20IA" class="btn btn-primary offer-btn" data-fr="Discuter d'une formation" data-en="Talk about a training">Discuter d'une formation</a>
+        </article>
+
+        <!-- Conseil -->
+        <article class="offer-card">
+          <div class="offer-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="m15 9-4.2 2.2L9 15l4.2-2.2L15 9Z"/></svg>
           </div>
-          <p class="card-desc">Description.</p>
-        </a>
+          <span class="offer-badge" data-fr="Conseil" data-en="Consulting">Conseil</span>
+          <h3 data-fr="Des outils IA sur-mesure pour votre activité" data-en="Custom AI tools for your business">Des outils IA sur-mesure pour votre activité</h3>
+          <p class="offer-desc" data-fr="J'accompagne dirigeants de PME et équipes produit dans la construction d'outils IA sur-mesure — automatisation de process, agents, applications internes — livrés en quelques semaines, avec un contrôle humain à chaque étape." data-en="I help SMB owners and product teams build custom AI tools — process automation, agents, internal apps — delivered in a few weeks, with human control at every step.">J'accompagne dirigeants de PME et équipes produit dans la construction d'outils IA sur-mesure — automatisation de process, agents, applications internes — livrés en quelques semaines, avec un contrôle humain à chaque étape.</p>
+
+          <ul class="offer-list">
+            <li data-fr="Automatisation de process métier (devis, coordination, reporting) avec IA + n8n" data-en="Business process automation (quotes, coordination, reporting) with AI + n8n">Automatisation de process métier (devis, coordination, reporting) avec IA + n8n</li>
+            <li data-fr="Applications internes &amp; outils sur-mesure (Claude Code, Supabase)" data-en="Internal apps &amp; custom tools (Claude Code, Supabase)">Applications internes &amp; outils sur-mesure (Claude Code, Supabase)</li>
+            <li data-fr="Discovery courte pour cadrer le bon périmètre avant de construire" data-en="Short discovery to scope the right problem before building">Discovery courte pour cadrer le bon périmètre avant de construire</li>
+            <li data-fr="Missions ponctuelles (2 à 4 semaines) ou accompagnement récurrent" data-en="Fixed-scope missions (2 to 4 weeks) or ongoing support">Missions ponctuelles (2 à 4 semaines) ou accompagnement récurrent</li>
+          </ul>
+
+          <p class="offer-meta" data-fr="Exemple : automatisation du traitement des devis d'une PME — de 3h à 30 min par jour" data-en="Example: quote-processing automation for an SMB — from 3h to 30min a day">Exemple : automatisation du traitement des devis d'une PME — de 3h à 30 min par jour</p>
+          <p class="offer-credential" data-fr="15 ans d'expérience produit — Amazon, JUST, Leroy Merlin, Accenture" data-en="15 years of product experience — Amazon, JUST, Leroy Merlin, Accenture">15 ans d'expérience produit — Amazon, JUST, Leroy Merlin, Accenture</p>
+
+          <a href="mailto:pchamber@gmail.com?subject=Mission%20de%20conseil" class="btn btn-primary offer-btn" data-fr="Discuter d'un projet" data-en="Talk about a project">Discuter d'un projet</a>
+        </article>
+
       </div>
-      -->
+    </section>
 
-    </div>
+    <!-- ─── About ──────────────────────────────────────────── -->
+    <section class="about">
+      <p class="eyebrow center" data-fr="À propos" data-en="About">À propos</p>
+      <p class="about-text" data-fr="Ancien Senior Product Manager chez Amazon et JUST, MBA INSEAD. Aujourd'hui, j'aide les équipes et les PME à transformer l'IA en produits concrets — par la formation et par le conseil." data-en="Former Senior Product Manager at Amazon and JUST, INSEAD MBA. Today, I help teams and SMBs turn AI into concrete products — through training and consulting.">Ancien Senior Product Manager chez Amazon et JUST, MBA INSEAD. Aujourd'hui, j'aide les équipes et les PME à transformer l'IA en produits concrets — par la formation et par le conseil.</p>
+    </section>
+
   </main>
 
-  <footer class="site-footer">
-    <span>© 2025 Atelier Bleu</span>
+  <!-- ─── Footer ─────────────────────────────────────────── -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-contact">
+      <a href="mailto:pchamber@gmail.com" class="contact-link">pchamber@gmail.com</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="tel:+33782924724" class="contact-link">+33 7 82 92 47 24</a>
+      <span class="sep" aria-hidden="true">·</span>
+      <a href="https://www.linkedin.com/in/philippe-cl/" class="contact-link" target="_blank" rel="noopener noreferrer">linkedin.com/in/philippe-cl</a>
+    </div>
+    <span class="footer-copy">© 2026 Philippe Chambert-Loir — Atelier Bleu</span>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
