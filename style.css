@@ -5,14 +5,27 @@
 }
 
 :root {
+  /* Design system « Atelier Bleu » (tokens.json) */
   --blue-deep: #060a1f;
   --blue-mid: #101a3d;
   --blue-light: #1f2f63;
   --blue-glow: #5b7cfa;
-  --gold: #e3c088;
-  --text-primary: #ffffff;
-  --text-muted: rgba(255, 255, 255, 0.68);
-  --border: rgba(255, 255, 255, 0.14);
+  --orange: #ff7a45;
+  --orange-text: #c04d0f;
+  --badge-border: rgba(192, 77, 15, 0.4);
+  --accent-text: #3d5ee8;
+
+  --surface: #ffffff;
+  --card: #f5f7ff;
+  --text-primary: var(--blue-deep);
+  --text-muted: #565867;
+  --border: #dcdde0;
+  --glow-tint: rgba(91, 124, 250, 0.12);
+
+  --dark-text: #ffffff;
+  --dark-text-muted: #b3b6c1;
+  --dark-border: rgba(255, 255, 255, 0.14);
+
   --topbar-h: 64px;
 }
 
@@ -32,6 +45,26 @@ body {
     radial-gradient(1100px 600px at 15% -10%, rgba(91, 124, 250, 0.28), transparent 60%),
     radial-gradient(900px 500px at 100% 10%, rgba(91, 124, 250, 0.16), transparent 55%),
     linear-gradient(180deg, var(--blue-deep) 0%, var(--blue-mid) 55%, var(--blue-deep) 100%);
+  background-color: var(--blue-deep);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Template sombre sur toute la page : les rôles de texte basculent sur les jetons dark-* */
+body,
+main {
+  --text-primary: var(--dark-text);
+  --text-muted: var(--dark-text-muted);
+  --border: var(--dark-border);
+  --card: rgba(255, 255, 255, 0.05);
+  --glow-tint: rgba(91, 124, 250, 0.18);
+  --orange-text: var(--orange);
+  --badge-border: rgba(255, 122, 69, 0.4);
+}
+
+.band-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 a {
@@ -47,10 +80,11 @@ a {
   height: var(--topbar-h);
   display: flex;
   align-items: center;
-  background: rgba(6, 10, 31, 0.78);
+  color: var(--dark-text);
+  background: rgba(6, 10, 31, 0.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--dark-border);
 }
 
 .topbar-inner {
@@ -65,12 +99,13 @@ a {
 }
 
 .brand {
-  font-weight: 900;
-  font-size: 0.9rem;
-  letter-spacing: 0.16em;
-  text-decoration: none;
-  color: var(--text-primary);
-  white-space: nowrap;
+  display: block;
+  line-height: 0;
+}
+
+.brand img {
+  width: 130px;
+  height: auto;
 }
 
 .contact-links {
@@ -87,14 +122,14 @@ a {
   gap: 0.45rem;
   font-size: 0.85rem;
   font-weight: 500;
-  color: var(--text-muted);
+  color: var(--dark-text-muted);
   text-decoration: none;
   white-space: nowrap;
   transition: color 0.2s;
 }
 
 .contact-link:hover {
-  color: var(--text-primary);
+  color: var(--dark-text);
 }
 
 .contact-link svg {
@@ -108,14 +143,14 @@ a {
   align-items: center;
   gap: 0.4rem;
   font-size: 0.8rem;
-  color: var(--text-muted);
+  color: var(--dark-text-muted);
   white-space: nowrap;
 }
 
 .lang-btn {
   background: none;
   border: none;
-  color: var(--text-muted);
+  color: var(--dark-text-muted);
   font: inherit;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -124,11 +159,11 @@ a {
 }
 
 .lang-btn:hover {
-  color: var(--text-primary);
+  color: var(--dark-text);
 }
 
 .lang-btn.active {
-  color: var(--text-primary);
+  color: var(--dark-text);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -142,11 +177,15 @@ main {
 }
 
 .eyebrow {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-style: italic;
-  font-size: 1rem;
-  color: var(--gold);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--orange-text);
   margin-bottom: 0.75rem;
+}
+
+.dark-band .eyebrow {
+  color: var(--orange);
 }
 
 .eyebrow.center {
@@ -162,7 +201,7 @@ main {
 
 .hero h1 {
   font-size: clamp(2.1rem, 5vw, 3.4rem);
-  font-weight: 800;
+  font-weight: 900;
   line-height: 1.15;
   letter-spacing: -0.01em;
   margin-bottom: 1.25rem;
@@ -170,7 +209,7 @@ main {
 
 .hero-sub {
   font-size: 1.1rem;
-  color: var(--text-muted);
+  color: var(--dark-text-muted);
   line-height: 1.65;
   max-width: 620px;
   margin-bottom: 2.25rem;
@@ -189,7 +228,7 @@ main {
   padding: 0.85rem 1.6rem;
   border-radius: 999px;
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
@@ -207,8 +246,8 @@ main {
 
 .btn-ghost {
   background: transparent;
-  color: var(--text-primary);
-  border: 1px solid var(--border);
+  color: var(--dark-text);
+  border: 1px solid var(--dark-border);
 }
 
 .btn-ghost:hover {
@@ -219,15 +258,16 @@ main {
 /* ─── Trust strip ────────────────────────────────────────── */
 
 .trust {
-  padding: 1.5rem 0 3.5rem;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 0;
+  margin-bottom: 4rem;
+  border-top: 1px solid var(--dark-border);
+  border-bottom: 1px solid var(--dark-border);
 }
 
 .trust-label {
   font-size: 0.85rem;
   letter-spacing: 0.04em;
-  color: var(--text-muted);
+  color: var(--dark-text-muted);
   text-align: center;
 }
 
@@ -240,7 +280,7 @@ main {
 .section-title {
   text-align: center;
   font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-  font-weight: 800;
+  font-weight: 900;
   margin-bottom: 3rem;
 }
 
@@ -253,7 +293,7 @@ main {
 .offer-card {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  background: var(--card);
   border: 1px solid var(--border);
   border-radius: 20px;
   padding: 2.5rem;
@@ -272,7 +312,7 @@ main {
   align-items: center;
   justify-content: center;
   border-radius: 12px;
-  background: rgba(91, 124, 250, 0.18);
+  background: var(--glow-tint);
   color: var(--blue-glow);
   margin-bottom: 1.25rem;
 }
@@ -289,8 +329,8 @@ main {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--gold);
-  border: 1px solid rgba(227, 192, 136, 0.4);
+  color: var(--orange-text);
+  border: 1px solid var(--badge-border);
   border-radius: 999px;
   padding: 0.25rem 0.75rem;
   margin-bottom: 0.9rem;
@@ -344,7 +384,7 @@ main {
 
 .offer-credential {
   font-size: 0.8rem;
-  color: var(--gold);
+  color: var(--orange-text);
   margin-bottom: 1.75rem;
 }
 
@@ -371,7 +411,8 @@ main {
 /* ─── Footer ─────────────────────────────────────────────── */
 
 .site-footer {
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--dark-border);
+  color: var(--dark-text);
   padding: 2.5rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -389,21 +430,14 @@ main {
   font-size: 0.9rem;
 }
 
-.footer-contact .contact-link {
-  color: var(--text-muted);
-}
-
-.footer-contact .contact-link:hover {
-  color: var(--text-primary);
-}
-
 .sep {
-  color: var(--border);
+  color: var(--dark-border);
 }
 
 .footer-copy {
-  font-size: 0.78rem;
-  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--dark-text-muted);
 }
 
 /* ─── Responsive ─────────────────────────────────────────── */

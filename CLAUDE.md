@@ -2,6 +2,14 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Avant toute modification (obligatoire)
+
+Le checkout local peut être en retard sur GitHub (le site est aussi édité depuis d'autres sessions / branches `claude/*`). Avant de lire ou de modifier quoi que ce soit :
+
+1. `git fetch origin && git status -sb` — si `main` est « behind », `git pull --ff-only origin main` d'abord (mettre de côté les changements locaux avec `git stash` si besoin).
+2. Vérifier que `index.html` correspond bien au site en ligne (offres Formation/Conseil, bascule FR/EN). Une page « portfolio » avec une carte Manu = ancienne version : stop, resynchroniser.
+3. En cas de doute entre ce que l'utilisateur décrit/montre et ce qu'on voit dans le dépôt, le dire et resynchroniser avant d'écrire, plutôt que de modifier une version obsolète.
+
 ## Project
 
 Static homepage for [atelier-bleu.com](https://atelier-bleu.com) — presents Philippe's AI training ("Formation") and AI consulting ("Conseil") services, bilingual FR/EN. No build step, no framework, no dependencies. Deployable as-is to OVH web hosting or any static host.
@@ -17,12 +25,13 @@ The site previously showcased creative side-projects (a "Manu" beatmaker/portfol
 
 ## Design system
 
-Colors are defined as CSS variables in `:root`:
-- `--blue-deep / --blue-mid / --blue-light / --blue-glow` — Parisian night-sky palette (page background)
-- `--text-primary / --text-muted` — typography (white on blue)
-- `--gold` — accent, used for the eyebrow labels and offer credentials
+Le site suit le design system « Atelier Bleu » (artifact claude.ai : https://claude.ai/artifact/KWmCGr5Qw3Q3Ttq335Rch9 ; tokens dans `project/tokens.json`). Les jetons sont repris dans `:root`.
 
-Fonts loaded from Google Fonts: **Inter** (body, UI, headings) + **Playfair Display italic** (eyebrow labels only).
+- Template sombre (barre du haut, héros, pied de page) : classe `.dark-band` / `.site-footer`, fond halo bleu nuit, wordmark `assets/atelier-bleu-blanc.png`.
+- Contenu (offres, à propos) sur fond blanc `--surface` ; cartes `--card` bordées de `--border`, rayon 20 px.
+- Accent : `--blue-glow` (formes, boutons), `--accent-text` pour du texte bleu. Orange corail : `--orange` sur fond sombre, `--orange-text` sur blanc (eyebrow, badges, ligne de preuve). Plus d'or.
+- Police : **Inter** seule (titres en 900). Plus de Playfair Display.
+- Images dans `assets/` (fond halo, wordmarks nuit/blanc), issues du design system.
 
 ## Editing bilingual content
 
