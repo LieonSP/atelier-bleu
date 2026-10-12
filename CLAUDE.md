@@ -29,7 +29,7 @@ Le site suit le design system « Atelier Bleu » (artifact claude.ai : https://c
 
 - Template sombre (barre du haut, héros, pied de page) : classe `.dark-band` / `.site-footer`, fond halo bleu nuit, wordmark `assets/atelier-bleu-blanc.png`.
 - Contenu (offres, à propos) sur fond blanc `--surface` ; cartes `--card` bordées de `--border`, rayon 20 px.
-- Accent : `--blue-glow` (formes, boutons), `--accent-text` pour du texte bleu. Orange corail : `--orange` sur fond sombre, `--orange-text` sur blanc (eyebrow, badges, ligne de preuve). Plus d'or.
+- Accent : `--blue-glow` (formes, boutons), `--accent-text` pour du texte bleu. Bleu électrique `#4d8bff` (`--orange`, nom hérité du design system) pour eyebrows, badges et lignes de preuve : écart volontaire avec le design system, qui prévoit l'orange corail `#ff7a45`. Plus d'or.
 - Police : **Inter** seule (titres en 900). Plus de Playfair Display.
 - Images dans `assets/` (fond halo, wordmarks nuit/blanc), issues du design system.
 
